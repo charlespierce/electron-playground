@@ -1,12 +1,20 @@
 {
-    "name": "sound-machine",
-    "version": "0.1.0",
-    "main": "./main.js",
+    "name": "electron-playground",
+    "version": "0.1.1",
+    "main": "dist/main.js",
     "scripts": {
-        "start": "electron ."
+        "build": "gulp build",
+        "clean": "gulp clean",
+        "start": "electron .",
+        "watch": "gulp watch"
     },
     "devDependencies": {
-        "electron": "^1.6.6"
+        "@types/electron": "^1.4.37",
+        "electron": "^1.6.6",
+        "gulp": "^3.9.1",
+        "gulp-clean": "^0.3.2",
+        "gulp-typescript": "^3.1.6",
+        "typescript": "^2.2.2"
     },
     "license": "UNLICENSED"
 }

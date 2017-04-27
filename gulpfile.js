@@ -20,15 +20,15 @@ gulp.task("clean", function () {
     return gulp.src(path.join(outDir, "*")).pipe(clean());
 });
 
-gulp.task("build:ts", buildTs);
-gulp.task("build:ts:clean", ["clean"], buildTs);
+gulp.task("build:incremental:ts", buildTs);
+gulp.task("build:ts", ["clean"], buildTs);
 
-gulp.task("build:static", buildStatic);
-gulp.task("build:static:clean", ["clean"], buildStatic);
+gulp.task("build:incremntal:static", buildStatic);
+gulp.task("build:static", ["clean"], buildStatic);
 
-gulp.task("build", ["clean", "build:ts:clean", "build:static:clean"]);
+gulp.task("build", ["clean", "build:ts", "build:static"]);
 
 gulp.task("watch", ["build"], function () {
-    gulp.watch(staticSource, ["build:static"]);
-    gulp.watch(tsSource, ["build:ts"]);
+    gulp.watch(staticSource, ["build:incremental:static"]);
+    gulp.watch(tsSource, ["build:incremental:ts"]);
 });
